@@ -1,0 +1,596 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 30px;
+  right: 0;
+  z-index: 10;
+
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 30px;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 17px;
+    @extend %ubuntu-medium;
+  }
+
+  &_btn {
+    color: #ffffff;
+    background-color: transparent;
+    padding: 6px 28px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    margin-right: 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      color: black;
+      background-color: #ffffff;
+    }
+  }
+
+  &_phone {
+    font-size: 16px;
+    line-height: 18px;
+    @extend %ubuntu-bold;
+  }
+}
+
+.menu {
+  &_list-item {
+    display: inline-block;
+
+    & + .menu_list-item {
+      padding-left: 20px;
+    }
+  }
+
+  &_list-phone {
+    display: none;
+  }
+
+  &_btn {
+    display: none;
+  }
+}
+
+.top {
+  background-image: url("../images/top-bg.jpg");
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(45.97% 54.43% at 50% 45.57%, rgba(23, 26, 28, 0) 50.28%, rgba(23, 26, 28, 0.00225974) 50.29%, rgba(4, 5, 5, 0.820343) 58.72%, rgba(5, 5, 6, 0.792703) 80.08%, #000000 87.89%);
+    opacity: 0.4;
+  }
+
+  &_wrapper {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &_inner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  &_title {
+    font-size: 96px;
+    line-height: 115px;
+    @extend %sf-semibold;
+    margin-bottom: 25px;
+  }
+
+  &_text {
+    margin: 25px 0 35px;
+    max-width: 325px;
+  }
+
+  &_social-item {
+    display: inline-block;
+    margin: 0 25px;
+  }
+
+  &_social-link {
+    opacity: 0.5;
+    transition: all .3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.products {
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+  }
+
+  &_text {
+    max-width: 440px;
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
+
+  &_slider-box {
+    position: relative;
+    padding-top: 110px;
+  }
+
+  &_slider-text {
+    width: 282px;
+    position: absolute;
+    text-align: right;
+    font-size: 24px;
+    line-height: 28px;
+    @extend %ubuntu-medium;
+    bottom: 30px;
+    left: -250px;
+    z-index: 5;
+  }
+
+  &_slider {
+    max-width: 560px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 560px;
+      height: 276px;
+      border: 4px solid #ffffff;
+      top: -15px;
+      right: -17px;
+    }
+  }
+}
+
+.slider-btn {
+  padding: 16px 26px;
+  border: none;
+  background-color: #ffffff;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  z-index: 5;
+  bottom: -50px;
+
+  svg {
+    stroke: #000000;
+  }
+
+  &_left {
+    right: 60px;
+  }
+
+  &.slick-disabled {
+    background-color: #000000;
+
+    svg {
+      stroke: #ffffff;
+    }
+  }
+}
+
+.benefits {
+  &_items {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 25px;
+  }
+
+  &_item {
+    margin-bottom: 100px;
+    display: flex;
+    align-items: flex-end;
+
+    &:nth-child(even) {
+      margin-left: 40px;
+      transform: translateY(25px);
+    }
+
+    &:nth-child(3) {
+      margin-left: 30px;
+    }
+
+    &:nth-child(4) {
+      margin-left: 60px;
+    }
+
+    &:first-child,
+    &:nth-child(3) {
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+      }
+    }
+
+    &:first-child {
+      position: relative;
+
+      &::before {
+        height: 48px;
+        width: 245px;
+        background-image: url("../images/line-1.svg");
+        right: -56px;
+        top: 36px;
+      }
+    }
+
+    &:nth-child(3) {
+
+      &::before {
+        background-image: url("../images/line-3.svg");
+        width: 254px;
+        height: 40px;
+        top: 44px;
+        right: -80px;
+      }
+
+      &::after {
+        background-image: url("../images/line-2.svg");
+        width: 463px;
+        height: 62px;
+        top: -70px;
+        right: -34px;
+      }
+    }
+  }
+
+
+  &_num {
+    line-height: 41px;
+    font-size: 36px;
+    @extend %ubuntu-bold;
+    margin-right: 10px;
+  }
+
+  &_img {
+    position: relative;
+    margin-right: 32px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 193px;
+      height: 128px;
+      border: 2px solid #ffffff;
+      right: -12px;
+      top: -12px;
+      z-index: -1;
+    }
+  }
+
+  &_info {
+    width: 300px;
+  }
+
+  &_info-title {
+    width: 123px;
+    font-size: 21px;
+    line-height: 24px;
+    @extend %ubuntu-bold;
+    margin-bottom: 10px;
+  }
+
+  &_info-text {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+.specification {
+  &_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 25px;
+  }
+
+  &_item--center {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  &_item {
+
+  }
+
+  &_box {
+    width: 280px;
+    position: relative;
+    margin-top: 10px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: contain;
+    }
+  }
+
+  &_box-2 {
+    margin-top: 140px;
+  }
+
+  &_box-4 {
+    margin-top: 160px;
+  }
+
+  &_box-1::before {
+    background-image: url("../images/pointer-1.svg");
+    width: 227px;
+    height: 114px;
+    right: -185px;
+    top: 15px;
+  }
+
+  &_box-2::before {
+    background-image: url("../images/pointer-2.svg");
+    width: 346px;
+    height: 80px;
+    right: -314px;
+    top: -63px;
+  }
+
+  &_box-3::before {
+    background-image: url("../images/pointer-3.svg");
+    width: 254px;
+    height: 102px;
+    left: -270px;
+    top: 12px;
+  }
+
+  &_box-4::before {
+    background-image: url("../images/pointer-4.svg");
+    width: 123px;
+    height: 89px;
+    left: -129px;
+    top: -74px;
+  }
+
+
+  &_box-title {
+    font-size: 21px;
+    line-height: 28px;
+    @extend %ubuntu-bold;
+    margin-bottom: 10px;
+  }
+
+  &_box-text {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+}
+
+
+.questions {
+  &_items {
+    max-width: 757px;
+    padding-bottom: 15px;
+  }
+
+  &_item {
+    background: rgba(0, 0, 0, 0.3);
+    max-width: 690px;
+    position: relative;
+
+    &:nth-child(3)::before {
+      content: '';
+      position: absolute;
+      width: 319px;
+      height: 125px;
+      top: -33px;
+      right: -386px;
+      background-image: url("../images/question-bg.png");
+    }
+  }
+
+  &_item-title {
+    font-size: 21px;
+    line-height: 28px;
+    @extend %ubuntu-medium;
+    color: rgba(#ffffff, .8);
+    padding: 20px 10px 20px 40px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 4px;
+
+    &::after {
+      content: url("../images/accordion-arrow.svg");
+      position: absolute;
+      width: 72px;
+      height: 67px;
+      background-color: #ffffff;
+      right: -72px;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &_item-text {
+    padding: 0 5px 75px 50px;
+    font-size: 15px;
+    line-height: 22px;
+    margin: 0 0 4px;
+    display: none;
+  }
+
+  &_item.questions_item--active {
+
+    .questions_item-title::after {
+      transform: rotate(180deg);
+    }
+
+    .questions_item-text {
+      display: block;
+    }
+  }
+}
+
+.contacts {
+  &_inner {
+    display: flex;
+    padding-left: 25px;
+  }
+
+  &_info {
+    width: 240px;
+    margin-right: 60px;
+  }
+
+  &_info-box {
+    margin-bottom: 30px;
+  }
+
+  &_info-title {
+    font-size: 21px;
+    line-height: 24px;
+    @extend %ubuntu-bold;
+    margin: 0 0 13px;
+  }
+
+  &_info-phone,
+  &_info-email {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  &_info-email:hover {
+    text-decoration: underline;
+  }
+
+  &_form {
+    width: 570px;
+    margin-right: 106px;
+  }
+
+  &_form-title {
+    font-size: 21px;
+    line-height: 24px;
+    @extend %ubuntu-bold;
+    margin: 0 0 13px;
+  }
+
+  &_form-text {
+    font-size: 15px;
+    line-height: 18px;
+    margin: 0 0 13px;
+  }
+
+  &_form-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &_form-input,
+  &_form-textarea {
+    border: none;
+    @extend %ubuntu-regular;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    font-size: 13px;
+    line-height: 15px;
+    color: #ffffff;
+
+    &::placeholder {
+      color: rgba(#ffffff, .4);
+    }
+  }
+
+  &_form-input {
+    width: 49%;
+  }
+
+  &_form-textarea {
+    min-height: 144px;
+    width: 100%;
+    resize: none;
+    margin-bottom: 20px;
+  }
+
+  &_form-btn {
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    @extend %ubuntu-bold;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    padding: 9px 15px;
+    color: #FFFFFF;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+
+  &_social-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &_social-item {
+    margin: 14px 0;
+  }
+
+  &_social-link {
+    opacity: 0.5;
+    transition: all .3s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+
+  &_copy {
+    text-align: right;
+    font-size: 13px;
+    line-height: 15px;
+    color: rgba(#FFFFFF, .6);
+  }
+}
+
+@import "media";
